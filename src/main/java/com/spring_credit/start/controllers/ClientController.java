@@ -35,8 +35,8 @@ public class ClientController {
     }
 
     @PostMapping("/send")
-    public void Mail() throws IOException, MessagingException {
-        clientService.sendMail("mh.karbal@gmail.com");
+    public void Mail(@RequestBody String email) throws IOException, MessagingException {
+        clientService.sendMail(email);
     }
 
     @GetMapping("/getuser")

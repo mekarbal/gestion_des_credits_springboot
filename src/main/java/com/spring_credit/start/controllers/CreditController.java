@@ -29,10 +29,10 @@ public class CreditController {
     }
 
     //@GetMapping("/calculCredit?amount={amount}&creditTerm={creditTerm}&taux={taux}")
-    @RequestMapping(path = "/calculCredit/amount={amount}/creditTerm={creditTerm}/taux={taux}", method = RequestMethod.GET)
-    public String creditCalcul(@PathVariable double amount, @PathVariable int creditTerm, @PathVariable double taux ){
-        System.out.print(amount+""+creditTerm+""+taux);
-        return  creditServiceImpl.calculCredit(amount,creditTerm,taux);
+    @GetMapping(path = "/calculCreditamount={amount}&taux={taux}")
+    public double creditCalcul(@PathVariable double amount,@PathVariable double taux ){
+
+        return creditServiceImpl.calculCredit(amount,taux);
     }
 
 }

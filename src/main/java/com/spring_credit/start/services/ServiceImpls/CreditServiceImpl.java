@@ -20,12 +20,11 @@ public class CreditServiceImpl implements CreditService {
     }
 
     @Override
-    public String calculCredit(double amount, int creditTerm, double taux) {
+    public double calculCredit(double amount, double taux) {
 
-
-        double amountMonth=(amount*taux*Math.pow((1+taux),creditTerm*12))/Math.pow((1+taux),creditTerm*12);
-
-        return "le montant mensuelle "+amount+" "+amountMonth;
+        double interest=amount*taux;
+        System.out.println(interest+amount);
+        return interest+amount;
     }
 
     @Override
